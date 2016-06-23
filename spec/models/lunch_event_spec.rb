@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe LunchEvent, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    it 'requires lunchtime' do
+      lunch_event= LunchEvent.new(lunchtime: '')
+      lunch_event.valid?
+      expect(lunch_event.errors[:lunchtime]).to include("can't be blank")
+    end
+  end
 end
