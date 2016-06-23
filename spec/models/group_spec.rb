@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe 'validations' do
+    it 'requires title' do
+      group = Group.new(title: '')
+      group.valid?
+      expect(group.errors[:title]).to include("can't be blank")
+    end
+  end
 end

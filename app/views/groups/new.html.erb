@@ -1,0 +1,7 @@
+<%= simple_form_for @group do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :growing, label: 'Accepting new members' %>
+  <%= f.submit 'Create Group', class: 'btn btn-primary' %>
+
+<% end %>
