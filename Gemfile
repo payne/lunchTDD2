@@ -43,5 +43,8 @@ group :development do
 end
 
 group :test do
+  gem 'turn', :require => false
   gem 'capybara'
+  gem 'guard-rspec'
+  gem 'database_cleaner'
 end

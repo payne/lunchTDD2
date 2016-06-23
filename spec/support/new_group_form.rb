@@ -9,9 +9,11 @@ class NewGroupForm
   end
 
   def register
-    visit('/')
-    click_on('Register')
-    #TODO(MGP): Left off here!
+    visit('/users/sign_up')
+    fill_in('Email', with: 'staff@tco.com')
+    fill_in('Password', with: 'Test!1234')
+    fill_in('Password confirmation', with: 'Test!1234')
+    click_on('Sign up')
     self
   end
 
