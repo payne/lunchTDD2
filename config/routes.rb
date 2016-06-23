@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'welcome#index'
   resources :groups, only: [ :new, :create, :show, :index ]
+  root 'welcome#index'
 end
