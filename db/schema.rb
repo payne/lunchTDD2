@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623213129) do
+ActiveRecord::Schema.define(version: 20160623231043) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "title"
@@ -21,11 +21,22 @@ ActiveRecord::Schema.define(version: 20160623213129) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "lunch_assignments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "lunch_event_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "lunch_assignments", ["lunch_event_id"], name: "index_lunch_assignments_on_lunch_event_id"
+  add_index "lunch_assignments", ["user_id"], name: "index_lunch_assignments_on_user_id"
+
   create_table "lunch_events", force: :cascade do |t|
     t.date     "lunchtime"
     t.integer  "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   add_index "lunch_events", ["group_id"], name: "index_lunch_events_on_group_id"
