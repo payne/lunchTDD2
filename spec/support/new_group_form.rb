@@ -2,8 +2,16 @@ class NewGroupForm
   include Capybara::DSL # visit, click_on, fill_in, and friends
 
   def visit_page
+    register
     visit('/')
     click_on('New Group') # TODO Use id instead of text.
+    self
+  end
+
+  def register
+    visit('/')
+    click_on('Register')
+    #TODO(MGP): Left off here!
     self
   end
 
