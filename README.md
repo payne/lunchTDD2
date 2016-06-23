@@ -1,1 +1,1 @@
-Current question is: Why does `bin/rspec spec/features/create_group_spec.rb` fail but `bin/rspec spec/features/user_registration.rb` works?
+Why does `bin/rspec spec/features/group_page_spec.rb` fail when all other tests (`bin/rspec`) pass?
