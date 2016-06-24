@@ -1,0 +1,13 @@
+<%= simple_form_for(@lunch_event) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :lunchtime %>
+    <%= f.association :group %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

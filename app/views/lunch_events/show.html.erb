@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lunchtime:</strong>
+  <%= @lunch_event.lunchtime %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @lunch_event.group %>
+</p>
+
+<%= link_to 'Edit', edit_lunch_event_path(@lunch_event) %> |
+<%= link_to 'Back', lunch_events_path %>
