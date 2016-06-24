@@ -24,6 +24,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
+        <li><%= link_to 'Lunch Events', lunch_events_path %></li>
+        <li><%= link_to 'Groups', groups_path %></li>
+        <li><%= link_to 'People', people_path %></li>
         <% if user_signed_in? %>
             <li><%= current_user.email %></li>
             <li><%= link_to 'Logout', signout_path %> </li>
@@ -31,8 +34,6 @@
             <li><%= link_to 'Register', new_user_registration_path %> </li>
             <li><%= link_to 'Login', new_user_session_path %></li>
         <% end %>
-        <li><%= link_to 'Groups', groups_path %></li>
-        <li><%= link_to 'Lunch Events', lunch_events_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
