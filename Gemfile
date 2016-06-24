@@ -48,3 +48,7 @@ group :test do
   gem 'guard-rspec'
   gem 'database_cleaner'
 end
+
+# For making ERDs see https://github.com/voormedia/rails-erd
+gem 'ruby-graphviz'
+gem 'rails-erd'
