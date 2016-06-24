@@ -3,8 +3,7 @@ class NewGroupForm
 
   def visit_page
     register
-    visit('/')
-    click_on('New Group') # TODO Use id instead of text.
+    visit('/groups/new')
     self
   end
 
