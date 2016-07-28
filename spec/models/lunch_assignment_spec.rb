@@ -7,6 +7,7 @@ RSpec.describe LunchAssignment, type: :model do
       lunch_event = LunchEvent.new(lunchtime: '2016-07-27')
       lunch_assignment = LunchAssignment.new(user: user,lunch_event: lunch_event)
       expect(lunch_assignment.valid?).to be(true)
+      expect(lunch_event.users.length()).to be(1)
     end
   end
 end
