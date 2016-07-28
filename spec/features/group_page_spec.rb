@@ -10,7 +10,8 @@ feature 'group page' do
     expect(page).to have_content('Welcome')
 
     group_title = 'Java and JVM Junkies'
-    group = FactoryGirl.create(:group, title: group_title) # in database (build is in RAM)
+    # in database (build is in RAM)
+    group = FactoryGirl.create(:group, title: group_title)
     #print "group id is #{group.id}"
     visit("/groups/#{group.id}")
 

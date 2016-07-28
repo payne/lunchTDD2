@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  
+
   describe 'validations' do
     it 'requires title' do
       group = Group.new(title: '')

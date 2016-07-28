@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :lunch_assignments
   has_many :lunch_events, through: :lunch_assignments
+
+
+  def to_s
+    email
+  end
 end
