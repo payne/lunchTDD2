@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :lunch_assignments
   has_many :lunch_events, through: :lunch_assignments
+  has_many :group_assignments
   has_many :groups, through: :group_assignments
 
 

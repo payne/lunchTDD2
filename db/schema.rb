@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624020447) do
+ActiveRecord::Schema.define(version: 20160728012228) do
+
+  create_table "group_assignments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "group_assignments", ["group_id"], name: "index_group_assignments_on_group_id"
+  add_index "group_assignments", ["user_id"], name: "index_group_assignments_on_user_id"
 
   create_table "groups", force: :cascade do |t|
     t.string   "title"
