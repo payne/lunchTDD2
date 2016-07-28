@@ -65,6 +65,11 @@ class LunchEventsController < ApplicationController
     puts "TODO(MGP) Logic to send a lunch announcment!"
     puts @lunch_event
     puts @lunch_event.lunchtime
+    #TODO(MGP): Send email to each user in the group!
+    #TODO(MGP): Put each user in the group into the lunch_event
+    # Because who is in the group changes after lunch_events are assigned
+    # and the group may have 100 people, but only five are choosen for lunch.
+    UserMailer.lunch_announcement('john@beatles.com').deliver_now
     @lunch_event.announcement_email_sent=true
     @lunch_event.save
   end
