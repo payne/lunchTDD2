@@ -13,5 +13,12 @@ feature 'announce lunch' do
     beatles.save # Must do to get the next two lines to pass.
     group = Group.first
     expect(group.valid?).to be(true)
+    lunch_event = LunchEvent.new(lunchtime: '2016-07-27', group:beatles)
+    lunch_event.save
+    expect(lunch_event.valid?).to be(true)
+    visit("/lunch_events/#{lunch_event.id}")
+    expect(page).to have_content("Announce Lunch!")
+    visit("/lunch_events/#{lunch_event.id}/announce")
+    expect(page).to have_content("Announcement email will be sent")
   end
 end
