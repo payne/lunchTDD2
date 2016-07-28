@@ -20,5 +20,7 @@ feature 'announce lunch' do
     expect(page).to have_content("Announce Lunch!")
     visit("/lunch_events/#{lunch_event.id}/announce")
     expect(page).to have_content("Announcement email will be sent")
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
+    expect(ActionMailer::Base.deliveries.last.to).to include(john.email)
   end
 end
