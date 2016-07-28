@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :lunch_events
+  resources :lunch_events do
+    member do
+      match 'announce', via: [:get]
+    end
+  end
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :groups, only: [ :new, :create, :show, :index ]
   resources :people, only: [ :index ]

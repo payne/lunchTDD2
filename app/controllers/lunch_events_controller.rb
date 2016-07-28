@@ -1,5 +1,5 @@
 class LunchEventsController < ApplicationController
-  before_action :set_lunch_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_lunch_event, only: [:show, :edit, :update, :destroy, :announce]
 
   # GET /lunch_events
   # GET /lunch_events.json
@@ -60,6 +60,15 @@ class LunchEventsController < ApplicationController
     end
   end
 
+  def announce
+    #TODO(MGP):
+    puts "TODO(MGP) Logic to send a lunch announcment!"
+    puts @lunch_event
+    puts @lunch_event.lunchtime
+    @lunch_event.announcement_email_sent=true
+    @lunch_event.save
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lunch_event
@@ -68,7 +77,6 @@ class LunchEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lunch_event_params
-      params.require(:lunch_event).permit(:name, :lunchtime, :group_id)
+      params.require(:lunch_event).permit(:name, :lunchtime, :group_id, :announcement_email_sent)
     end
 end
-
