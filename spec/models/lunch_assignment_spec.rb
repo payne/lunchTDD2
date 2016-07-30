@@ -29,7 +29,9 @@ RSpec.describe LunchAssignment, type: :model do
       expect(le2.valid?).to be(true)
       expect(beatles.lunch_events.length()).to eq(2)
       le3 = beatles.lunch_events.create(lunchtime: '2016-07-29')
-      expect(le2.valid?).to be(true) # So, the group parameter is not needed!
+      # TODO(ASK) How to not have to pass the group in!!!
+      # Make a method in the group model?
+      expect(le3.valid?).to be(false)
       expect(beatles.lunch_events.length()).to eq(3)
     end
   end
