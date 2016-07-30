@@ -8,6 +8,7 @@ RSpec.describe GroupAssignment, type: :model do
       george = User.new(email: 'george@beatles.com', password: 'rock!1965')
       ringo = User.new(email: 'ringo@beatles.com', password: 'rock!1965')
       beatles = Group.new(title: 'The Beatles')
+
       expect(beatles.valid?).to be(true)
       beatles.users << john << paul << george << ringo
       expect(beatles.valid?).to be(true)
@@ -21,6 +22,7 @@ RSpec.describe GroupAssignment, type: :model do
       paul.save
       expect(paul.groups.length()).to eq(2)
       expect(ringo.groups.length()).to eq(1)
+      expect(paul.groups).to include(beatles, wings)
     end
   end
 end

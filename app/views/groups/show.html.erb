@@ -1,1 +1,11 @@
 <h1><%= @group.title %></h1>
+Has these members:
+<table>
+  <tbody>
+<% @group.users.each do |person| %>
+  <tr>
+    <td><%= person.first_name %></td>
+    <td><%= person.email %></td>
+<% end %>
+</tbody>
+</table>
