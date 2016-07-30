@@ -15,17 +15,15 @@ RSpec.describe LunchAssignment, type: :model do
     it 'one group per lunch event' do
       ds = DataSetup.new
       beatles, wings, paul, ringo =ds.people_and_groups_setup
-      lunch_event = LunchEvent.new(lunchtime: '2016-07-27', group: wings)
+      lunch_event = LunchEvent.new(lunchtime: '2016-07-27', group: beatles)
       expect(lunch_event.valid?).to be(true)
-      #lunch_event.group << beatles #causes no such method error
       lunch_event.users << paul << ringo
       lunch_event.save
       expect(lunch_event.valid?).to be(true)
       expect(lunch_event.users.length()).to eq(2)
-      wings.save
-      # TODO:
-      #expect(wings.lunch_events.length()).to eq(1)
-
+      beatles.save
+      # Why does this fail?
+      #expect(beatles.lunch_events.length()).to eq(1)
     end
   end
 
