@@ -25,6 +25,12 @@ RSpec.describe LunchAssignment, type: :model do
       expect(lunch_event.users.length()).to eq(2)
       beatles.save
       expect(beatles.lunch_events.length()).to eq(1)
+      le2 = beatles.lunch_events.create(lunchtime: '2016-07-28', group: beatles)
+      expect(le2.valid?).to be(true)
+      expect(beatles.lunch_events.length()).to eq(2)
+      le3 = beatles.lunch_events.create(lunchtime: '2016-07-29')
+      expect(le2.valid?).to be(true) # So, the group parameter is not needed!
+      expect(beatles.lunch_events.length()).to eq(3)
     end
   end
 
