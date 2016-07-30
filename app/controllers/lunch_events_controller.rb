@@ -62,9 +62,9 @@ class LunchEventsController < ApplicationController
 
   def announce
     #TODO(MGP):
-    puts "TODO(MGP) Logic to send a lunch announcment!"
-    puts @lunch_event
-    puts @lunch_event.lunchtime
+    #puts "TODO(MGP) Logic to send a lunch announcment!"
+    #puts @lunch_event
+    #puts @lunch_event.lunchtime
     #TODO(MGP): Send email to each user in the group!
     #TODO(MGP): Put each user in the group into the lunch_event
     # Because who is in the group changes after lunch_events are assigned

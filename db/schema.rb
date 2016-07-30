@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728104739) do
+ActiveRecord::Schema.define(version: 20160730034208) do
 
   create_table "group_assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20160728104739) do
 
   add_index "lunch_assignments", ["lunch_event_id"], name: "index_lunch_assignments_on_lunch_event_id"
   add_index "lunch_assignments", ["user_id"], name: "index_lunch_assignments_on_user_id"
+
+  create_table "lunch_event_assignments", force: :cascade do |t|
+    t.integer  "lunch_event_id"
+    t.integer  "group_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "lunch_event_assignments", ["group_id"], name: "index_lunch_event_assignments_on_group_id"
+  add_index "lunch_event_assignments", ["lunch_event_id"], name: "index_lunch_event_assignments_on_lunch_event_id"
 
   create_table "lunch_events", force: :cascade do |t|
     t.date     "lunchtime"
