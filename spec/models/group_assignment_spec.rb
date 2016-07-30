@@ -13,6 +13,7 @@ RSpec.describe GroupAssignment, type: :model do
       expect(paul.groups.length()).to eq(2)
       expect(ringo.groups.length()).to eq(1)
       expect(paul.groups).to include(beatles, wings)
+      expect(beatles.users.length()).to eq(4)
       martin = beatles.users.create(email:'GeorgeMartin@beatles.com',password:'fifthBEATLE')
       expect(beatles.users.length()).to eq(5)
       expect(martin.valid?).to be(true)
