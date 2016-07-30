@@ -1,6 +1,6 @@
 class LunchEvent < ActiveRecord::Base
   validates :lunchtime, presence: true
-
+  validates :group, presence: true
 
   has_many :lunch_assignments
   has_many :users, through: :lunch_assignments
