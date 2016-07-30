@@ -32,6 +32,10 @@ RSpec.describe LunchAssignment, type: :model do
       # TODO(ASK) How to not have to pass the group in!!!
       # Make a method in the group model?
       expect(le3.valid?).to be(false)
+      beatles.save
+      expect(le3.valid?).to be(false)
+      le3.save
+      expect(le3.valid?).to be(false)
       expect(beatles.lunch_events.length()).to eq(3)
     end
   end
