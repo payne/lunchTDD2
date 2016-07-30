@@ -15,6 +15,7 @@ RSpec.describe GroupAssignment, type: :model do
       expect(paul.groups).to include(beatles, wings)
       martin = beatles.users.create(email:'GeorgeMartin@beatles.com',password:'fifthBEATLE')
       expect(beatles.users.length()).to eq(5)
+      expect(martin.valid?).to be(true)
     end
   end
 end
