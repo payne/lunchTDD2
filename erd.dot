@@ -45,9 +45,20 @@ m_LunchEvent [label = <<table border="0" align="center" cellspacing="0.5" cellpa
 </table>
 |
 <table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="announcement_email_sent">announcement_email_sent <font face="Arial ItalicMT" color="grey60">boolean</font></td></tr>
   <tr><td align="left" width="130" port="group_id">group_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
   <tr><td align="left" width="130" port="lunchtime">lunchtime <font face="Arial ItalicMT" color="grey60">date ∗</font></td></tr>
   <tr><td align="left" width="130" port="name">name <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="num_reminder_emails">num_reminder_emails <font face="Arial ItalicMT" color="grey60">integer</font></td></tr>
+</table>
+>];
+m_LunchEventAssignment [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">LunchEventAssignment</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="group_id">group_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
+  <tr><td align="left" width="130" port="lunch_event_id">lunch_event_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
 </table>
 >];
 m_User [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
@@ -71,10 +82,12 @@ m_User [label = <<table border="0" align="center" cellspacing="0.5" cellpadding=
 </table>
 >];
   m_User -> m_LunchAssignment [arrowhead = "normal", arrowtail = "none", weight = "2"];
-  m_User -> m_LunchEvent [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"];
+  m_User -> m_LunchEvent [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
   m_User -> m_GroupAssignment [arrowhead = "normal", arrowtail = "none", weight = "2"];
   m_User -> m_Group [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
   m_Group -> m_GroupAssignment [arrowhead = "normal", arrowtail = "none", weight = "2"];
-  m_LunchEvent -> m_LunchAssignment [arrowhead = "normal", arrowtail = "none", weight = "1"];
-  m_Group -> m_LunchEvent [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_Group -> m_LunchEvent [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_LunchEvent -> m_LunchAssignment [arrowhead = "normal", arrowtail = "none", weight = "2"];
+  m_LunchEvent -> m_LunchEventAssignment [arrowhead = "normal", arrowtail = "none", weight = "1"];
+  m_Group -> m_LunchEventAssignment [arrowhead = "normal", arrowtail = "none", weight = "1"];
 }
