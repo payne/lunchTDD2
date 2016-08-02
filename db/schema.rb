@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730034208) do
+ActiveRecord::Schema.define(version: 20160802002700) do
 
   create_table "group_assignments", force: :cascade do |t|
     t.integer  "user_id"
