@@ -15,9 +15,8 @@ RSpec.describe LunchAssignment, type: :model do
     it 'one group per lunch event' do
       ds = DataSetup.new
       beatles, wings, paul, ringo =ds.people_and_groups_setup
-      #lunch_event = LunchEvent.new(lunchtime: '2016-07-27', group: beatles)
-      # Above doesn't work!  Fails on expect(beatles.lunch_events.length()).to eq(1)
-      lunch_event = beatles.lunch_events.create(lunchtime: '2016-07-27', group: beatles)
+      lunch_event = beatles.lunch_events.create(lunchtime: '2016-07-27')
+      expect(beatles.lunch_events.length()).to eq(1)
       expect(lunch_event.valid?).to be(true)
       lunch_event.users << paul << ringo
       lunch_event.save
@@ -25,12 +24,10 @@ RSpec.describe LunchAssignment, type: :model do
       expect(lunch_event.users.length()).to eq(2)
       beatles.save
       expect(beatles.lunch_events.length()).to eq(1)
-      le2 = beatles.lunch_events.create(lunchtime: '2016-07-28', group: beatles)
+      le2 = beatles.lunch_events.create(lunchtime: '2016-07-28')
       expect(le2.valid?).to be(true)
       expect(beatles.lunch_events.length()).to eq(2)
       le3 = beatles.lunch_events.create(lunchtime: '2016-07-29')
-      # TODO(ASK) How to not have to pass the group in!!!
-      # Make a method in the group model?
       expect(le3.valid?).to be(true)
       beatles.save
       expect(le3.valid?).to be(true)
