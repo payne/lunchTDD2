@@ -9,3 +9,6 @@ https://github.com/plataformatec/simple_form
 Ponder https://github.com/tsechingho/chosen-rails
 
 http://sts10.github.io/blog/2014/04/02/chosen/
+
+http://voormedia.github.io/rails-erd/customise.html
+
