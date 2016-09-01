@@ -15,3 +15,4 @@
 1. owner of a group can edit lunch events (add & remove people)
 1. owner of a group can email announcement to all lunch events
 1. owner of a group can email announcement to selected lunch events
+1. email announcement is too all users in the lunch event (KISS approach)
