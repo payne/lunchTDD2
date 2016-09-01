@@ -1,0 +1,47 @@
+
+announce lunch
+  create group, lunch event, and announce it
+
+create new group
+  create new group with valid data
+  cannot create group with invalid data
+
+group page
+  group public page
+
+home page
+  welcome message
+
+UserMailer
+  sends lunch_announcement email to people in group
+  has correct subject
+
+GroupAssignment
+  valid association demo
+    allows two users in a group
+
+Group
+  validations
+    requires title
+  many users in a group
+    can have several people
+
+LunchAssignment
+  validations
+    requires something
+  associations
+    one group per lunch event
+
+LunchEvent
+  validations
+    requires lunchtime
+
+User
+  validations
+    requires email
+  associations
+    many groups can be associated with a user
+
+Finished in 0.91595 seconds (files took 0.24069 seconds to load)
+15 examples, 0 failures
+
