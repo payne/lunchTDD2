@@ -11,8 +11,8 @@ fontname = "Arial BoldMT";
 node[ shape  =  "Mrecord" , fontsize  =  "10" , fontname  =  "ArialMT" , margin  =  "0.07,0.05" , penwidth  =  "1.0"];
 edge[ fontname  =  "ArialMT" , fontsize  =  "7" , dir  =  "both" , arrowsize  =  "0.9" , penwidth  =  "1.0" , labelangle  =  "32" , labeldistance  =  "1.8"];
 rankdir = "TB";
-label = "sample title\n\n";
-m_Group [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+label = "Five For Lunch ERD\n\n";
+m_Group [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
   <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Group</font></td></tr>
 </table>
 |
@@ -21,8 +21,8 @@ m_Group [label = <<table border="0" align="center" cellspacing="0.5" cellpadding
   <tr><td align="left" width="130" port="growing">growing <font face="Arial ItalicMT" color="grey60">boolean</font></td></tr>
   <tr><td align="left" width="130" port="title">title <font face="Arial ItalicMT" color="grey60">string ∗</font></td></tr>
 </table>
->];
-m_GroupAssignment [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+}>];
+m_GroupAssignment [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
   <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">GroupAssignment</font></td></tr>
 </table>
 |
@@ -30,8 +30,8 @@ m_GroupAssignment [label = <<table border="0" align="center" cellspacing="0.5" c
   <tr><td align="left" width="130" port="group_id">group_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
   <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
 </table>
->];
-m_LunchAssignment [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+}>];
+m_LunchAssignment [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
   <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">LunchAssignment</font></td></tr>
 </table>
 |
@@ -39,8 +39,8 @@ m_LunchAssignment [label = <<table border="0" align="center" cellspacing="0.5" c
   <tr><td align="left" width="130" port="lunch_event_id">lunch_event_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
   <tr><td align="left" width="130" port="user_id">user_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
 </table>
->];
-m_LunchEvent [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+}>];
+m_LunchEvent [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
   <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">LunchEvent</font></td></tr>
 </table>
 |
@@ -51,8 +51,8 @@ m_LunchEvent [label = <<table border="0" align="center" cellspacing="0.5" cellpa
   <tr><td align="left" width="130" port="name">name <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
   <tr><td align="left" width="130" port="num_reminder_emails">num_reminder_emails <font face="Arial ItalicMT" color="grey60">integer</font></td></tr>
 </table>
->];
-m_LunchEventAssignment [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+}>];
+m_LunchEventAssignment [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
   <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">LunchEventAssignment</font></td></tr>
 </table>
 |
@@ -60,8 +60,8 @@ m_LunchEventAssignment [label = <<table border="0" align="center" cellspacing="0
   <tr><td align="left" width="130" port="group_id">group_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
   <tr><td align="left" width="130" port="lunch_event_id">lunch_event_id <font face="Arial ItalicMT" color="grey60">integer FK</font></td></tr>
 </table>
->];
-m_User [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+}>];
+m_User [label = <{<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
   <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">User</font></td></tr>
 </table>
 |
@@ -80,7 +80,7 @@ m_User [label = <<table border="0" align="center" cellspacing="0.5" cellpadding=
   <tr><td align="left" width="130" port="sign_in_count">sign_in_count <font face="Arial ItalicMT" color="grey60">integer ∗</font></td></tr>
   <tr><td align="left" width="130" port="twitter_handle">twitter_handle <font face="Arial ItalicMT" color="grey60">string</font></td></tr>
 </table>
->];
+}>];
   m_User -> m_LunchAssignment [arrowhead = "normal", arrowtail = "none", weight = "2"];
   m_User -> m_LunchEvent [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "2", constraint = "false"];
   m_User -> m_GroupAssignment [arrowhead = "normal", arrowtail = "none", weight = "2"];
