@@ -1,5 +1,5 @@
 1. Users can register themselves
-1. Users can create a group.  Creater is an owner of the group by default.
+1. Users can create a group.  Creator is an owner of the group by default.
 1. Users can join a group
 1. Users can leave a group
 1. Users can invite person via email to a group
